@@ -7,9 +7,10 @@ export const clearRecipe = () => {
 
 const formatCount = count => {
 	if (count) {
+		// return formatAsMixedFraction(count);
 		// count = 2.5 --> 2 1/2
 		// count = 0.5 --> 1/2
-		const newCount = Math.round(count * 10000) / 10000;
+		const newCount = Math.round(count*100)/100;
 		const [int, dec] = newCount.toString().split('.').map(el => parseInt(el, 10));
 
 		if (!dec) return newCount;
@@ -25,6 +26,49 @@ const formatCount = count => {
 	return '?';
 }
 
+// function formatAsMixedFraction(decimalNumber) {
+// 	const wholePart = Math.floor(decimalNumber);
+// 	const decimalPart = decimalNumber - wholePart;
+
+// 	if (decimalPart === 0) {
+// 			return wholePart.toString();
+// 	}
+
+// 	let fractionPart = "";
+
+// 	switch (decimalPart) {
+// 			case 0.33333:
+// 					fractionPart = "1/3";
+// 					break;
+// 			case 0.66666:
+// 					fractionPart = "2/3";
+// 					break;
+// 			case 0.25:
+// 					fractionPart = "1/4";
+// 					break;
+// 			case 0.75:
+// 					fractionPart = "3/4";
+// 					break;
+// 			case 0.2:
+// 					fractionPart = "1/5";
+// 					break;
+// 			case 0.4:
+// 					fractionPart = "2/5";
+// 					break;
+// 			case 0.6:
+// 					fractionPart = "3/5";
+// 					break;
+// 			case 0.8:
+// 					fractionPart = "4/5";
+// 					break;
+// 			default:
+// 					fractionPart = decimalPart.toFixed(5).split('.')[1] + "/100000";
+// 					break;
+// 	}
+
+// 	return `${wholePart} ${fractionPart}`;
+// }
+
 const createIngredient = (ingredient) => `
 	<li class="recipe__item">
 		<svg class="recipe__icon">
@@ -38,7 +82,7 @@ const createIngredient = (ingredient) => `
 	</li>
 `;
 
-export const renderRecipe = (recipe) => {
+export const renderRecipe = (recipe, isLiked) => {
 	const markup = `
 		<figure class="recipe__fig">
 			<img src="${recipe.image}" alt="${recipe.title}" class="recipe__img">
@@ -80,7 +124,7 @@ export const renderRecipe = (recipe) => {
 
 			<button class="recipe__love">
 				<svg class="header__likes">
-					<use href="img/icons.svg#icon-heart-outlined"></use>
+					<use href="img/icons.svg#icon-heart${isLiked ? '' : '-outlined'}"></use>
 				</svg>
 			</button>
 		</div>

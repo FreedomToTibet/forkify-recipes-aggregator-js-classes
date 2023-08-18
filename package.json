@@ -1,14 +1,14 @@
 {
   "name": "forkify",
   "version": "1.0.0",
-  "description": "forkify JS project",
+  "description": "forkify JS and API project",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open"
   },
-  "author": "",
+  "author": "Andrew",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.22.9",

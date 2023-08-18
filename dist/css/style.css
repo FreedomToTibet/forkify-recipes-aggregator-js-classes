@@ -167,7 +167,8 @@ body {
   .header__logo {
     margin-left: 4rem;
     height: 4.5rem;
-    display: block; }
+    display: block;
+		cursor: pointer; }
 
 .search {
   background-color: #fff;
@@ -453,8 +454,7 @@ body {
   flex-direction: column; }
   .shopping__list {
     list-style: none;
-    max-height: 77rem;
-    overflow: scroll; }
+    max-height: 77rem; }
   .shopping__item {
     display: flex;
     align-items: flex-start;
