@@ -122,7 +122,6 @@ const contolLike = () => {
 
     likesView.toggleLikeBtn(true);
     likesView.renderLike(newLike);
-		console.log(state.likes);
 
   } else {
     state.likes.deleteLike(currentID);
