@@ -21,29 +21,4 @@ export default class List {
 	updateCount(id, newCount) {
 		this.items.find(el => el.id === id).count = newCount;
 	}
-	// updateUnit(id, newUnit) {
-	// 	this.items.find(el => el.id === id).unit = newUnit;
-	// }
-	// updateIngredient(id, newIngredient) {
-	// 	this.items.find(el => el.id === id).ingredient = newIngredient;
-	// }
-	// toggleBookmark(id) {
-	// 	const item = this.items.find(el => el.id === id);
-	// 	item.bookmarked = !item.bookmarked;
-	// }
-	// toggleBookmarkAll() {
-	// 	this.items.forEach(el => el.bookmarked = !el.bookmarked);
-	// }
-	// toggleBookmarkAllOff() {
-	// 	this.items.forEach(el => el.bookmarked = false);
-	// }
-	// toggleBookmarkAllOn() {
-	// 	this.items.forEach(el => el.bookmarked = true);
-	// }
-	// toggleBookmarkAllOnOff() {
-	// 	this.items.forEach(el => el.bookmarked = !el.bookmarked);
-	// }
-	// toggleBookmarkAllOnOffOff() {
-	// 	this.items.forEach(el => el.bookmarked = !el.bookmarked);
-	// }
 }

@@ -90,10 +90,11 @@ const controlList = () => {
     const item = state.list.addItem(el.count, el.unit, el.ingredient);
     listView.renderItem(item);
   });
+	listView.renderDelBtnList();
 };
 
 elements.shopping.addEventListener('click', (e) => {
-  const id = e.target.closest('.shopping__item').dataset.itemid;
+  const id = e.target.closest('.shopping__item')?.dataset.itemid;
 
   if (e.target.matches('.shopping__delete, .shopping__delete *')) {
     state.list.deleteItem(id);
@@ -101,8 +102,11 @@ elements.shopping.addEventListener('click', (e) => {
   } else if (e.target.matches('.shopping__count-value')) {
     const val = parseFloat(e.target.value, 10);
     state.list.updateCount(id, val);
+  } else if (e.target.matches('.recipe__delete, .recipe__delete *')) {
+    listView.deleteAllItems();
   }
 });
+
 
 //*** LIKE ***
 

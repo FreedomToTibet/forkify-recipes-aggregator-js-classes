@@ -26,7 +26,7 @@ body {
 
 .container {
   max-width: 120rem;
-  margin: 4vw auto;
+  margin: 2vw auto;
   background-color: #fff;
   border-radius: 6px;
   overflow: hidden;
@@ -402,6 +402,12 @@ body {
       height: 2.75rem;
       width: 2.75rem;
       fill: #fff; }
+	.recipe__love.recipe__delete {
+		margin: 25px auto;
+	}
+	.recipe__love.recipe__delete svg {
+		fill: red;
+	}
   .recipe__ingredients {
     padding: 4rem 5rem;
     font-size: 1.5rem;
@@ -453,8 +459,9 @@ body {
   display: flex;
   flex-direction: column; }
   .shopping__list {
+		overflow-y: auto;
     list-style: none;
-    max-height: 77rem; }
+    max-height: 100rem; }
   .shopping__item {
     display: flex;
     align-items: flex-start;
